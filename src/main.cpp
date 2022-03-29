@@ -1,15 +1,19 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
+#include <allegro5/allegro_ttf.h>
 
 int main()
 {
     al_init();
+    al_init_font_addon();
+    al_init_ttf_addon();
+
     al_install_keyboard();
 
     ALLEGRO_TIMER* timer = al_create_timer(1.0 / 30.0);
     ALLEGRO_EVENT_QUEUE* queue = al_create_event_queue();
-    ALLEGRO_DISPLAY* disp = al_create_display(320, 200);
-    ALLEGRO_FONT* font = al_create_builtin_font();
+    ALLEGRO_DISPLAY* disp = al_create_display(640, 480);
+    ALLEGRO_FONT* font = al_load_ttf_font("font.ttf", 20, 0);
 
     al_register_event_source(queue, al_get_keyboard_event_source());
     al_register_event_source(queue, al_get_display_event_source(disp));
