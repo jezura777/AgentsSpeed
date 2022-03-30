@@ -16,7 +16,7 @@ int main()
     ALLEGRO_FONT* cynax = al_load_ttf_font("cynax.ttf", 20, 0);
 
     const char title[ALLEGRO_NEW_WINDOW_TITLE_MAX_SIZE] = "AgentsSpeed";
-    void al_set_window_title(disp, title);
+    al_set_window_title(disp, title);
 
     al_register_event_source(queue, al_get_keyboard_event_source());
     al_register_event_source(queue, al_get_display_event_source(disp));
